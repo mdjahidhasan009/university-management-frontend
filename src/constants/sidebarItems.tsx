@@ -105,14 +105,6 @@ export const sidebarItems = (role: string) => {
           ),
           key: `/${role}/offered-course-section`,
         },
-        {
-          label: (
-            <Link href={`/${role}/offered-course-schedule`}>
-              Course schedules
-            </Link>
-          ),
-          key: `/${role}/offered-course-schedule`,
-        },
       ],
     },
   ];
@@ -130,17 +122,6 @@ export const sidebarItems = (role: string) => {
       icon: <TableOutlined />,
       key: `/${role}/user`,
     },
-    // {
-    //   label: "Manage permission",
-    //   key: "manage-permission",
-    //   icon: <AppstoreOutlined />,
-    //   children: [
-    //     {
-    //       label: <Link href={`/${role}/permission`}>View permissions</Link>,
-    //       key: `/${role}/permission`,
-    //     },
-    //   ],
-    // },
     {
       label: "Management",
       key: "management",

@@ -1,6 +1,7 @@
 import { DatePicker, DatePickerProps, Input } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
 import dayjs, { Dayjs } from "dayjs";
+
 type UMDatePikerProps = {
   onChange?: (valOne: Dayjs | null, valTwo: string) => void;
   name: string;
@@ -8,6 +9,7 @@ type UMDatePikerProps = {
   value?: Dayjs;
   size?: "large" | "small";
 };
+
 const FormDatePicker = ({
                           name,
                           label,
@@ -15,10 +17,12 @@ const FormDatePicker = ({
                           size = "large",
                         }: UMDatePikerProps) => {
   const { control, setValue } = useFormContext();
+
   const handleOnChange: DatePickerProps["onChange"] = (date, dateString) => {
     onChange ? onChange(date, dateString) : null;
-    setValue(name, dateString);
+    setValue(name, date);
   };
+
   return (
     <div>
       {label ? label : null}
@@ -28,7 +32,7 @@ const FormDatePicker = ({
         control={control}
         render={({ field }) => (
           <DatePicker
-            defaultValue={dayjs(field.value) || ""}
+            defaultValue={dayjs(field.value) || Date.now()}
             size={size}
             onChange={handleOnChange}
             style={{ width: "100%" }}
@@ -38,4 +42,5 @@ const FormDatePicker = ({
     </div>
   );
 };
+
 export default FormDatePicker;

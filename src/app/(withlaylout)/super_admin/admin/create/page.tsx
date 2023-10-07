@@ -1,8 +1,9 @@
 "use client";
+
 import Form from "@/components/Forms/Form";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
-import FormSelectField from "@/components/Forms/FormSelectField";
+import FormSelectField, {SelectOptions} from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import UploadImage from "@/components/ui/UploadImage";
@@ -10,7 +11,7 @@ import { bloodGroupOptions, genderOptions } from "@/constants/global";
 import { useAddAdminWithFormDataMutation } from "@/redux/api/adminApi";
 import { useDepartmentsQuery } from "@/redux/api/departmentApi";
 import { adminSchema } from "@/schemas/admin";
-import { IDepartment } from "@/types";
+import { IDepartment } from "@/types/common";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Button, Col, Row, message } from "antd";
@@ -23,12 +24,17 @@ const CreateAdminPage = () => {
 
   const departmentOptions =
     departments &&
-    departments?.map((department) => {
-      return {
-        label: department?.title,
-        value: department?.id,
-      };
-    });
+    departments
+      ?.map((department) => {
+        if(!department?.title || !department?.id) return null;
+
+        return {
+          label: department?.title,
+          value: department?.id,
+        };
+      })
+      .filter(Boolean) as SelectOptions[]
+  ;
 
   const onSubmit = async (values: any) => {
     const obj = { ...values };
@@ -46,6 +52,7 @@ const CreateAdminPage = () => {
       console.error(err.message);
     }
   };
+
   return (
     <div>
       <UMBreadCrumb
@@ -61,6 +68,7 @@ const CreateAdminPage = () => {
         ]}
       />
       <h1>Create Admin</h1>
+
       <div>
         <Form submitHandler={onSubmit} resolver={yupResolver(adminSchema)}>
           <div
@@ -177,6 +185,7 @@ const CreateAdminPage = () => {
               </Col>
             </Row>
           </div>
+
           {/* basic info */}
           <div
             style={{
@@ -286,6 +295,7 @@ const CreateAdminPage = () => {
                   rows={4}
                 />
               </Col>
+
               <Col span={12} style={{ margin: "10px 0" }}>
                 <FormTextArea
                   name="admin.permanentAddress"
@@ -295,7 +305,7 @@ const CreateAdminPage = () => {
               </Col>
             </Row>
           </div>
-          <Button htmlType="submit" type="primary">
+          <Button type="primary" htmlType="submit">
             Create
           </Button>
         </Form>
@@ -303,4 +313,5 @@ const CreateAdminPage = () => {
     </div>
   );
 };
+
 export default CreateAdminPage;

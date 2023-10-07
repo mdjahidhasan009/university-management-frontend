@@ -26,10 +26,10 @@ const AdminPage = () => {
   const [sortOrder, setSortOrder] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  query["limit"] = size;
-  query["page"] = page;
-  query["sortBy"] = sortBy;
-  query["sortOrder"] = sortOrder;
+  // query["limit"] = size;
+  // query["page"] = page;
+  // query["sortBy"] = sortBy;
+  // query["sortOrder"] = sortOrder;
 
   const debouncedSearchTerm = useDebounced({
     searchQuery: searchTerm,
@@ -142,7 +142,7 @@ const AdminPage = () => {
           },
         ]}
       />
-      <ActionBar title="Department List">
+      <ActionBar title="Admin List">
         <Input
           size="large"
           placeholder="Search"

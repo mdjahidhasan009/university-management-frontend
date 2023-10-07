@@ -1,26 +1,31 @@
-import {getFromLocalStorage, setToLocalStorage} from "@/utils/local-storage";
-import {authKey} from "@/constants/storageKey";
-import {decodedToken} from "@/utils/jwt";
+import { authKey } from "@/constants/storageKey"
+import { decodedToken } from "@/utils/jwt"
+import {getFromLocalStorage, setToLocalStorage } from "@/utils/local-storage"
 
-export const storeAccessToken = ({accessToken}: { accessToken: string }) => {
-    return setToLocalStorage(authKey, accessToken as string);
+export const storeUserInfo = ({ accessToken }: { accessToken: string }) => {
+  return setToLocalStorage(authKey, accessToken as string)
+
 }
 
 export const getUserInfo = () => {
-  const authToken = getFromLocalStorage(authKey);
-  if(authToken) {
+  const authToken = getFromLocalStorage(authKey)
+  // console.log(authToken);
+  if (authToken) {
     const decodedData = decodedToken(authToken);
     return decodedData;
-  } else {
-    return null;
   }
+  else {
+    return ""
+  }
+
 }
+
 
 export const isLoggedIn = () => {
-  const authToken = getFromLocalStorage(authKey);
-  return !!authToken;
+  const authToken = getFromLocalStorage(authKey)
+  return !!authToken
 }
 
-export const removeUserInfo = () => {
-  return localStorage.removeItem(authKey);
+export const removeUserInfo = (key:string) => {
+  return localStorage.removeItem(key)
 }
