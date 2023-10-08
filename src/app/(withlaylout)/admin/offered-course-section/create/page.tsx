@@ -14,7 +14,8 @@ import { useSemesterRegistrationsQuery } from "@/redux/api/semesterRegistrationA
 import { Button, Col, Row, message } from "antd";
 import {useAddOfferedCourseSectionMutation} from "@/redux/api/offeredCourseSectionApi";
 import {useState} from "react";
-import ACDepartmentField from "@/components/Forms/ACDepartmentField";
+import ACDepartmentIDField from "@/components/Forms/ACDepartmentIDField";
+import SemesterRegistrationField from "@/components/Forms/SemesterRegistrationField";
 
 const CreateOfferedCourseSectionPage = () => {
   const [addOfferedCourseSection] = useAddOfferedCourseSectionMutation();
@@ -81,7 +82,7 @@ const CreateOfferedCourseSectionPage = () => {
               />
             </div>
             <div style={{ margin: "10px 0px" }}>
-              <ACDepartmentField
+              <ACDepartmentIDField
                 name="academicDepartment"
                 label="Academic Department"
                 onChange={(el) => setAcDepartmentId(el)}
