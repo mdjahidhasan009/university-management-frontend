@@ -6,7 +6,7 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useDebounced } from "@/redux/hooks";
 import UMTable from "@/components/ui/UMTable";
-import { IOfferedCourseSection } from "@/types";
+// import { IOfferedCourseSection } from "@/types";
 import { useFacultyCourseStudentsQuery } from "@/redux/api/facultyApi";
 
 const FacultyCoursesStudentsPage = ({ searchParams }: Record<string, any>) => {
@@ -79,7 +79,11 @@ const FacultyCoursesStudentsPage = ({ searchParams }: Record<string, any>) => {
       render: function (data: any) {
         return (
           <div key="1" style={{ margin: "20px 0px" }}>
-            <Button type="primary">View Marks</Button>
+            <Link
+              href={`/faculty/student-result?studentId=${data.id}&courseId=${courseId}&offeredCourseSectionId=${offeredCourseSectionId}`}
+            >
+              <Button type="primary">View Marks</Button>
+            </Link>
           </div>
         );
       },

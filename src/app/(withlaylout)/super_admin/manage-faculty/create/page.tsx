@@ -1,5 +1,7 @@
 "use client";
 
+import ACDepartmentField from "@/components/Forms/ACDepartmentField";
+import ACFacultyField from "@/components/Forms/ACFacultyField";
 import Form from "@/components/Forms/Form";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
@@ -8,32 +10,30 @@ import FormTextArea from "@/components/Forms/FormTextArea";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import UploadImage from "@/components/ui/UploadImage";
 import { bloodGroupOptions, genderOptions } from "@/constants/global";
-import { Button, Col, Row } from "antd";
+import { useAddFacultyWithFormDataMutation } from "@/redux/api/facultyApi";
+import { Button, Col, Row, message } from "antd";
 
 const CreateFacultyPage = () => {
-  const departmentOptions = [
-    {
-      label: "HR",
-      value: "hr",
-    },
-    {
-      label: "Finance",
-      value: "finance",
-    },
-    {
-      label: "Management",
-      value: "Management",
-    },
-  ];
+  const [addFacultyWithFormData] = useAddFacultyWithFormDataMutation();
 
-  const adminOnSubmit = async (data: any) => {
+  const adminOnSubmit = async (values: any) => {
+    const obj = { ...values };
+    const file = obj["file"];
+    delete obj["file"];
+    const data = JSON.stringify(obj);
+    const formData = new FormData();
+    formData.append("file", file as Blob);
+    formData.append("data", data);
+    message.loading("Creating...");
     try {
-      console.log(data);
+      const res = await addFacultyWithFormData(formData);
+      if (!!res) {
+        message.success("Faculty created successfully!");
+      }
     } catch (err: any) {
       console.error(err.message);
     }
   };
-
   const base = "super_admin";
   return (
     <>
@@ -65,7 +65,6 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={6} style={{ margin: "10px 0" }}>
               <FormInput
                 name="faculty.name.middleName"
@@ -73,7 +72,6 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={6} style={{ margin: "10px 0" }}>
               <FormInput
                 name="faculty.name.lastName"
@@ -81,7 +79,6 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={6} style={{ margin: "10px 0" }}>
               <FormInput
                 type="password"
@@ -90,7 +87,6 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={8} style={{ margin: "10px 0" }}>
               <FormSelectField
                 name="faculty.gender"
@@ -100,17 +96,15 @@ const CreateFacultyPage = () => {
             </Col>
 
             <Col span={8} style={{ margin: "10px 0" }}>
-              <FormSelectField
+              <ACFacultyField
                 name="faculty.academicFaculty"
                 label="Academic Faculty"
-                options={departmentOptions}
               />
             </Col>
             <Col span={8} style={{ margin: "10px 0" }}>
-              <FormSelectField
+              <ACDepartmentField
                 name="faculty.academicDepartment"
                 label="Academic Department"
-                options={departmentOptions}
               />
             </Col>
 
@@ -140,7 +134,6 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={8} style={{ margin: "10px 0" }}>
               <FormInput
                 name="faculty.contactNo"
@@ -148,7 +141,6 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={8} style={{ margin: "10px 0" }}>
               <FormInput
                 name="faculty.emergencyContactNo"
@@ -156,14 +148,12 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={8} style={{ margin: "10px 0" }}>
               <FormDatePicker
                 name="faculty.dateOfBirth"
                 label="Date of birth"
               />
             </Col>
-
             <Col span={8} style={{ margin: "10px 0" }}>
               <FormSelectField
                 name="faculty.bloodGroup"
@@ -171,7 +161,6 @@ const CreateFacultyPage = () => {
                 options={bloodGroupOptions}
               />
             </Col>
-
             <Col span={8} style={{ margin: "10px 0" }}>
               <FormInput
                 name="faculty.designation"
@@ -179,7 +168,6 @@ const CreateFacultyPage = () => {
                 size="large"
               />
             </Col>
-
             <Col span={12} style={{ margin: "10px 0" }}>
               <FormTextArea
                 name="faculty.presentAddress"
@@ -187,7 +175,6 @@ const CreateFacultyPage = () => {
                 rows={4}
               />
             </Col>
-
             <Col span={12} style={{ margin: "10px 0" }}>
               <FormTextArea
                 name="faculty.permanentAddress"
@@ -202,5 +189,4 @@ const CreateFacultyPage = () => {
     </>
   );
 };
-
 export default CreateFacultyPage;
