@@ -1,3 +1,5 @@
+"use client";
+
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import {Button, Input} from "antd";
 import Link from "next/link";

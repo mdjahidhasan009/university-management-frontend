@@ -26,9 +26,9 @@ export const axiosBaseQuery =
           data,
           params,
           headers: {
-            "Content-Type": contentType || "application/json",
-            withCredentials: true,
+            "Content-Type": contentType || "application/json"
           },
+          withCredentials: true
         });
         return result;
       } catch (axiosError) {

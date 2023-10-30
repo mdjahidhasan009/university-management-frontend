@@ -3,7 +3,7 @@
 import Form from "@/components/Forms/Form";
 import FormDatePicker from "@/components/Forms/FormDatePicker";
 import FormInput from "@/components/Forms/FormInput";
-import FormSelectField, {SelectOptions} from "@/components/Forms/FormSelectField";
+import FormSelectField from "@/components/Forms/FormSelectField";
 import FormTextArea from "@/components/Forms/FormTextArea";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import UploadImage from "@/components/ui/UploadImage";
@@ -11,7 +11,7 @@ import { bloodGroupOptions, genderOptions } from "@/constants/global";
 import { useAddAdminWithFormDataMutation } from "@/redux/api/adminApi";
 import { useDepartmentsQuery } from "@/redux/api/departmentApi";
 import { adminSchema } from "@/schemas/admin";
-import { IDepartment } from "@/types/common";
+import { IDepartment } from "@/types";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Button, Col, Row, message } from "antd";
@@ -24,17 +24,12 @@ const CreateAdminPage = () => {
 
   const departmentOptions =
     departments &&
-    departments
-      ?.map((department) => {
-        if(!department?.title || !department?.id) return null;
-
-        return {
-          label: department?.title,
-          value: department?.id,
-        };
-      })
-      .filter(Boolean) as SelectOptions[]
-  ;
+    departments?.map((department) => {
+      return {
+        label: department?.title,
+        value: department?.id,
+      };
+    });
 
   const onSubmit = async (values: any) => {
     const obj = { ...values };
@@ -305,7 +300,7 @@ const CreateAdminPage = () => {
               </Col>
             </Row>
           </div>
-          <Button type="primary" htmlType="submit">
+          <Button htmlType="submit" type="primary">
             Create
           </Button>
         </Form>
