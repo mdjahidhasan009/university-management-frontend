@@ -7,7 +7,7 @@ const { Header: AntHeader } = Layout;
 const Header = () => {
   const router = useRouter();
   const logOut = () => {
-    removeUserInfo();
+    removeUserInfo(authKey);
     router.push("/login");
   };
   const items: MenuProps["items"] = [

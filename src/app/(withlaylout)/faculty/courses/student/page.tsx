@@ -8,8 +8,10 @@ import { useDebounced } from "@/redux/hooks";
 import UMTable from "@/components/ui/UMTable";
 // import { IOfferedCourseSection } from "@/types";
 import { useFacultyCourseStudentsQuery } from "@/redux/api/facultyApi";
+import Link from "next/link";
+import {ISearchParams} from "@/types";
 
-const FacultyCoursesStudentsPage = ({ searchParams }: Record<string, any>) => {
+const FacultyCoursesStudentsPage = ({ searchParams }: ISearchParams) => {
   //   console.log(searchParams);
   const { courseId, offeredCourseSectionId } = searchParams;
 

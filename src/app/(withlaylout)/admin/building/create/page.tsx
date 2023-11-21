@@ -2,7 +2,7 @@
 import Form from "@/components/Forms/Form";
 import FormInput from "@/components/Forms/FormInput";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { useAddBuildingMutation } from "@/redux/api/buildingApi";
+import { useAddBuildingMutation } from "@/redux/api/academic/buildingApi";
 import { Button, Col, Row, message } from "antd";
 
 const CreateBuildPage = () => {

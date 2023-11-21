@@ -1,6 +1,6 @@
 import { IBuilding, IMeta } from "@/types";
-import { baseApi } from "./baseApi";
-import { tagTypes } from "../tag-types";
+import { baseApi } from "../baseApi";
+import { tagTypes } from "../../tag-types";
 
 const BUILDING_URL = "/buildings";
 

@@ -15,7 +15,7 @@ import { useDebounced } from "@/redux/hooks";
 import dayjs from "dayjs";
 import {
   useDeleteSemesterRegistrationsMutation,
-  useSemesterRegistrationsQuery,
+  useSemesterRegistrationsQuery, useStartNewSemesterMutation,
 } from "@/redux/api/semesterRegistrationApi";
 
 const SemesterRegistrationPage = () => {

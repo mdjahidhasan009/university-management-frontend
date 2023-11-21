@@ -9,6 +9,8 @@ import {useDebounced} from "@/redux/hooks";
 import {useFacultiesQuery} from "@/redux/api/facultyApi";
 import {DeleteOutlined, EditOutlined, EyeOutlined, ReloadOutlined} from "@ant-design/icons";
 import ActionBar from "@/components/ui/ActionBar";
+import {IDepartment} from "@/types";
+import dayjs from "dayjs";
 
 const FacultyPage = () => {
   const query: Record<string, any> = {};

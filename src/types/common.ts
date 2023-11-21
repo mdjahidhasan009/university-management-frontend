@@ -364,3 +364,8 @@ export interface IStudentEnrolledCourse {
   student: ICoreStudent;
   course: ICourse;
 }
+
+type SearchParams = Record<string, any>;
+export interface ISearchParams {
+  searchParams: SearchParams;
+}

@@ -25,13 +25,14 @@ const Form = ({
   if (!!resolver) formConfig["resolver"] = resolver;
   const methods = useForm<FormProps>(formConfig);
 
-  const { handleSubmit, reset, errors } = methods;
+  // const { handleSubmit, reset, errors } = methods;
+  const { handleSubmit, reset } = methods;
 
   const onSubmit = (data: any) => {
     submitHandler(data);
     reset();
   };
-  const onError = (errors, e) => {
+  const onError = (errors:any) => {
     console.log(errors);
   }
 

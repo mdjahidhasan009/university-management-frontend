@@ -20,9 +20,10 @@ import {
   useStudentEnrolledCourseMarksQuery,
   useUpdateFinalMarksMutation,
 } from "@/redux/api/studentEnrollCourseMarkApi";
-import { IStudentEnrolledCourseMark } from "@/types";
+import {ISearchParams, IStudentEnrolledCourseMark} from "@/types";
 
-const StudentResultPage = ({ searchParams }: Record<string, any>) => {
+
+const StudentResultPage = ({ searchParams }: ISearchParams) => {
   const [updateFinalMarks] = useUpdateFinalMarksMutation();
   const [academicSemesterId, setAcademicSemesterId] = useState<string>();
 
@@ -159,6 +160,7 @@ const StudentResultPage = ({ searchParams }: Record<string, any>) => {
     setSortOrder("");
     setSearchTerm("");
   };
+
   return (
     <div>
       <UMBreadCrumb

@@ -1,4 +1,4 @@
-import { useCoursesQuery } from "@/redux/api/courseApi";
+import { useCoursesQuery } from "@/redux/api/academic/courseApi";
 import FormMultiSelectField from "./FormMultiSelectField";
 import { SelectOptions } from "./FormSelectField";
 

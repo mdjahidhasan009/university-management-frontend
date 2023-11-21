@@ -10,12 +10,12 @@ import {
   useAddOfferedCourseMutation,
   useOfferedCoursesQuery,
 } from "@/redux/api/offeredCourseApi";
-import { useSemesterRegistrationsQuery } from "@/redux/api/semesterRegistrationApi";
 import { Button, Col, Row, message } from "antd";
 import {useAddOfferedCourseSectionMutation} from "@/redux/api/offeredCourseSectionApi";
 import {useState} from "react";
 import ACDepartmentIDField from "@/components/Forms/ACDepartmentIDField";
 import SemesterRegistrationField from "@/components/Forms/SemesterRegistrationField";
+import FormDynamicFields from "@/components/Forms/FormDynamicFields";
 
 const CreateOfferedCourseSectionPage = () => {
   const [addOfferedCourseSection] = useAddOfferedCourseSectionMutation();

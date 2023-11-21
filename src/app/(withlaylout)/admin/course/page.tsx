@@ -16,7 +16,7 @@ import dayjs from "dayjs";
 import {
   useCoursesQuery,
   useDeleteCourseMutation,
-} from "@/redux/api/courseApi";
+} from "@/redux/api/academic/courseApi";
 
 const CoursePage = () => {
   const query: Record<string, any> = {};

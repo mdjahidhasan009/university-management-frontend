@@ -8,15 +8,16 @@ export const storeUserInfo = ({ accessToken }: { accessToken: string }) => {
   return setToLocalStorage(authKey, accessToken as string);
 };
 
-export const getUserInfo = () => {
+export const getUserInfo = (): any => {
   const authToken = getFromLocalStorage(authKey);
   // console.log(authToken);
   if (authToken) {
     const decodedData = decodedToken(authToken);
     return decodedData;
-  } else {
-    return "";
   }
+  // else {
+  //   return "";
+  // }
 };
 
 export const isLoggedIn = () => {

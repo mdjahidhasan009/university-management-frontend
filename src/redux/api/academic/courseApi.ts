@@ -1,6 +1,6 @@
 import { ICourse, IMeta } from "@/types";
-import { baseApi } from "./baseApi";
-import { tagTypes } from "../tag-types";
+import { baseApi } from "../baseApi";
+import { tagTypes } from "../../tag-types";
 
 const COURSE_URL = "/courses";
 

@@ -1,5 +1,5 @@
 import FormSelectField, { SelectOptions } from "./FormSelectField";
-import { useBuildingsQuery } from "@/redux/api/buildingApi";
+import { useBuildingsQuery } from "@/redux/api/academic/buildingApi";
 
 const BuildingField = () => {
   const { data, isLoading } = useBuildingsQuery({

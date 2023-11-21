@@ -15,7 +15,7 @@ import dayjs from "dayjs";
 import {
   useBuildingsQuery,
   useDeleteBuildingMutation,
-} from "@/redux/api/buildingApi";
+} from "@/redux/api/academic/buildingApi";
 
 const ManageBuildingPage = () => {
   const query: Record<string, any> = {};

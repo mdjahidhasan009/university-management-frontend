@@ -5,8 +5,9 @@ import ActionBar from "@/components/ui/ActionBar";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import { useUpdateMarksMutation } from "@/redux/api/studentEnrollCourseMarkApi";
 import { Button, Col, Row, message } from "antd";
+import {ISearchParams} from "@/types";
 
-const UpdateMarksPage = ({ searchParams }: Record<string, any>) => {
+const UpdateMarksPage = ({ searchParams }: ISearchParams) => {
   const {
     examType,
     marks,

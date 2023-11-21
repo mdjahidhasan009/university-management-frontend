@@ -6,7 +6,7 @@ import FormSelectField, {
   SelectOptions,
 } from "@/components/Forms/FormSelectField";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { useBuildingsQuery } from "@/redux/api/buildingApi";
+import { useBuildingsQuery } from "@/redux/api/academic/buildingApi";
 import { useAddRoomMutation } from "@/redux/api/roomApi";
 import { Button, Col, Row, message } from "antd";
 

@@ -5,7 +5,7 @@ import FormInput from "@/components/Forms/FormInput";
 import FormMultiSelectField from "@/components/Forms/FormMultiSelectField";
 import { SelectOptions } from "@/components/Forms/FormSelectField";
 import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
-import { useAddCourseMutation, useCoursesQuery } from "@/redux/api/courseApi";
+import { useAddCourseMutation, useCoursesQuery } from "@/redux/api/academic/courseApi";
 import { Button, Col, Row, message } from "antd";
 
 const CreateCoursePage = () => {
