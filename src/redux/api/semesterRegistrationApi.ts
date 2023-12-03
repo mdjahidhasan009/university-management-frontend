@@ -90,7 +90,7 @@ export const semesterRegistrationApi = baseApi.injectEndpoints({
     }),
     confirmMyRegistration: build.mutation({
       query: () => ({
-        url: `${BASE_SEMESTER_REGISTRATION}/confirm-registration`,
+        url: `${BASE_SEMESTER_REGISTRATION}/confirm-my-registration`,
         method: "POST",
       }),
       invalidatesTags: [tagTypes.courseRegistration],

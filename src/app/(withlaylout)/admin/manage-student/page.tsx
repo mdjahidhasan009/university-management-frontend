@@ -12,9 +12,7 @@ import {
 import { useState } from "react";
 import { useDebounced } from "@/redux/hooks";
 import UMTable from "@/components/ui/UMTable";
-import { IDepartment } from "@/types";
 import dayjs from "dayjs";
-import { useFacultiesQuery } from "@/redux/api/facultyApi";
 import { useStudentsQuery } from "@/redux/api/studentApi";
 
 const StudentPage = () => {
@@ -109,11 +107,13 @@ const StudentPage = () => {
       },
     },
   ];
+
   const onPaginationChange = (page: number, pageSize: number) => {
     console.log("Page:", page, "PageSize:", pageSize);
     setPage(page);
     setSize(pageSize);
   };
+
   const onTableChange = (pagination: any, filter: any, sorter: any) => {
     const { order, field } = sorter;
     // console.log(order, field);
@@ -126,6 +126,7 @@ const StudentPage = () => {
     setSortOrder("");
     setSearchTerm("");
   };
+
   return (
     <div>
       <UMBreadCrumb

@@ -10,6 +10,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const userLoggedIn = isLoggedIn();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
   useEffect(() => {
     if (!userLoggedIn) {
       router.push("/login");
