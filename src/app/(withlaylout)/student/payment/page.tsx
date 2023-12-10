@@ -51,8 +51,8 @@ const ViewMyPayment = () => {
     // console.log(data);
     try {
       const res = await initialPayment(data).unwrap();
-      // console.log(res);
-      router.push(res?.paymentUrl);
+      console.log(res);
+      router.push(res?.paymentUrl?.data);
     } catch (error) {}
   };
 
