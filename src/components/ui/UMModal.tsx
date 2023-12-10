@@ -12,14 +12,14 @@ interface IModal {
 }
 
 const UMModal = ({
-                   isOpen,
-                   closeModal,
-                   title,
-                   children,
-                   handleOk,
-                   showCancelButton = true,
-                   showOkButton = true,
-                 }: IModal) => {
+  isOpen,
+  closeModal,
+  title,
+  children,
+  handleOk,
+  showCancelButton = true,
+  showOkButton = true,
+}: IModal) => {
   return (
     <Modal
       title={title}

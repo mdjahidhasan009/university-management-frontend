@@ -11,14 +11,15 @@ type UMDatePikerProps = {
 };
 
 const FormDatePicker = ({
-                          name,
-                          label,
-                          onChange,
-                          size = "large",
-                        }: UMDatePikerProps) => {
+  name,
+  label,
+  onChange,
+  size = "large",
+}: UMDatePikerProps) => {
   const { control, setValue } = useFormContext();
 
   const handleOnChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
     onChange ? onChange(date, dateString) : null;
     setValue(name, date);
   };

@@ -14,11 +14,11 @@ type FormProps = {
 } & FormConfig;
 
 const Form = ({
-                children,
-                submitHandler,
-                defaultValues,
-                resolver,
-              }: FormProps) => {
+  children,
+  submitHandler,
+  defaultValues,
+  resolver,
+}: FormProps) => {
   const formConfig: FormConfig = {};
 
   if (!!defaultValues) formConfig["defaultValues"] = defaultValues;
@@ -32,6 +32,7 @@ const Form = ({
     submitHandler(data);
     reset();
   };
+
   const onError = (errors:any) => {
     console.log(errors);
   }

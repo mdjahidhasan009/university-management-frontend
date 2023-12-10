@@ -15,16 +15,16 @@ type UMTableProps = {
 };
 
 const UMTable = ({
-                   loading = false,
-                   columns,
-                   dataSource,
-                   pageSize,
-                   totalPages,
-                   showSizeChanger = true,
-                   onPaginationChange,
-                   onTableChange,
-                   showPagination = true,
-                 }: UMTableProps) => {
+  loading = false,
+  columns,
+  dataSource,
+  pageSize,
+  totalPages,
+  showSizeChanger = true,
+  onPaginationChange,
+  onTableChange,
+  showPagination = true,
+}: UMTableProps) => {
   const paginationConfig = showPagination
     ? {
       pageSize: pageSize,

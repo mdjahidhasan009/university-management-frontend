@@ -15,10 +15,10 @@ type UMCollapseProps = {
 };
 
 const UMCollapse = ({
-                      items,
-                      onChange,
-                      defaultActiveKey = ["1"],
-                    }: UMCollapseProps) => {
+  items,
+  onChange,
+  defaultActiveKey = ["1"],
+}: UMCollapseProps) => {
   return (
     <Collapse defaultActiveKey={defaultActiveKey} onChange={onChange}>
       {items?.map((item) => {

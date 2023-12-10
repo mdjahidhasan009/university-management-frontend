@@ -19,14 +19,14 @@ type SelectFieldProps = {
 };
 
 const FormMultiSelectField = ({
-                                name,
-                                size = "large",
-                                value,
-                                placeholder = "select",
-                                options,
-                                label,
-                                defaultValue,
-                              }: SelectFieldProps) => {
+  name,
+  size = "large",
+  value,
+  placeholder = "select",
+  options,
+  label,
+  defaultValue,
+}: SelectFieldProps) => {
   const { control } = useFormContext();
 
   return (

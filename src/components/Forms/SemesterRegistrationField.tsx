@@ -9,10 +9,10 @@ type SemesterRegistrationFieldProps = {
 };
 
 const SemesterRegistrationField = ({
-                                     name,
-                                     label,
-                                     onChange,
-                                   }: SemesterRegistrationFieldProps) => {
+  name,
+  label,
+  onChange,
+}: SemesterRegistrationFieldProps) => {
   const { data, isLoading } = useSemesterRegistrationsQuery({
     limit: 100,
     page: 1,

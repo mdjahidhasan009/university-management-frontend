@@ -3,10 +3,10 @@ import dayjs from "dayjs";
 import { DatePicker } from "antd";
 
 const FormYearPicker = ({
-                          name,
-                          label,
-                          picker,
-                        }: {
+  name,
+  label,
+  picker,
+}: {
   name: string;
   label?: string;
   picker: "year" | "time";

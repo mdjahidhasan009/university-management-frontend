@@ -8,10 +8,10 @@ type ACDepartmentIDFieldProps = {
 };
 
 const ACDepartmentIDField = ({
-                               name,
-                               label,
-                               onChange,
-                             }: ACDepartmentIDFieldProps) => {
+  name,
+  label,
+  onChange,
+}: ACDepartmentIDFieldProps) => {
   const { data, isLoading } = useAcademicDepartmentsQuery({
     limit: 100,
     page: 1,

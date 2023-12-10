@@ -10,12 +10,12 @@ type TextAreaProps = {
 };
 
 const FormTextArea = ({
-                        name,
-                        label,
-                        rows,
-                        value,
-                        placeholder,
-                      }: TextAreaProps) => {
+  name,
+  label,
+  rows,
+  value,
+  placeholder,
+}: TextAreaProps) => {
   const { control } = useFormContext();
   return (
     <div className={`flex flex-col  w-full`}>

@@ -14,10 +14,9 @@ export const getUserInfo = (): any => {
   if (authToken) {
     const decodedData = decodedToken(authToken);
     return decodedData;
+  } else {
+    return "";
   }
-  // else {
-  //   return "";
-  // }
 };
 
 export const isLoggedIn = () => {

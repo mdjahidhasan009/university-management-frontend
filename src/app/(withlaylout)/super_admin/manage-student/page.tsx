@@ -43,7 +43,7 @@ const StudentPage = () => {
 
   const students = data?.students;
   const meta = data?.meta;
-  // console.log(students);
+  // console.log(faculties);
 
   const columns = [
     {

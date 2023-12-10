@@ -17,16 +17,16 @@ interface IInput {
 }
 
 const FormInput = ({
-                     name,
-                     type,
-                     size = "large",
-                     value,
-                     id,
-                     placeholder,
-                     validation,
-                     label,
-                     required,
-                   }: IInput) => {
+  name,
+  type,
+  size = "large",
+  value,
+  id,
+  placeholder,
+  validation,
+  label,
+  required,
+}: IInput) => {
   const {
     control,
     formState: { errors },

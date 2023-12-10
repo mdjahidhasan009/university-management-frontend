@@ -109,9 +109,9 @@ const CreateOfferedCourseSectionPage = () => {
             <FormDynamicFields />
           </Col>
         </Row>
-        <Button type="primary" htmlType="submit">
-          add
-        </Button>
+        {/*<Button type="primary" htmlType="submit">*/}
+        {/*  add*/}
+        {/*</Button>*/}
       </Form>
     </div>
   );

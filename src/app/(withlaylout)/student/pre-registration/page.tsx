@@ -19,9 +19,9 @@ const ViewPreregistrationPage = () => {
   //   console.log(data, "offeredCourseSections");
 
   const handleEnroll = async ({
-                                offeredCourseId,
-                                offeredCourseSectionId,
-                              }: any) => {
+    offeredCourseId,
+    offeredCourseSectionId,
+  }: any) => {
     try {
       await enrollIntoCourse({
         offeredCourseId,
@@ -33,9 +33,9 @@ const ViewPreregistrationPage = () => {
   };
 
   const handleWithdraw = async ({
-                                  offeredCourseId,
-                                  offeredCourseSectionId,
-                                }: any) => {
+    offeredCourseId,
+    offeredCourseSectionId,
+  }: any) => {
     try {
       await withdrawFromCourse({
         offeredCourseId,

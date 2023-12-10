@@ -50,7 +50,11 @@ const CreateSemesterRegistrationPage = () => {
               />
             </div>
             <div style={{ margin: "10px 0px" }}>
-              <FormDatePicker name="endDate" label="End Date" size="large" />
+              <FormDatePicker
+                name="endDate"
+                label="End Date"
+                size="large"
+              />
             </div>
             <div style={{ margin: "10px 0px" }}>
               <ACSemesterField
@@ -59,10 +63,18 @@ const CreateSemesterRegistrationPage = () => {
               />
             </div>
             <div style={{ margin: "10px 0px" }}>
-              <FormInput name="minCredit" label="Min Credit" type="number" />
+              <FormInput
+                name="minCredit"
+                label="Min Credit"
+                type="number"
+              />
             </div>
             <div style={{ margin: "10px 0px" }}>
-              <FormInput name="maxCredit" label="Max Credit" type="number" />
+              <FormInput
+                name="maxCredit"
+                label="Max Credit"
+                type="number"
+              />
             </div>
           </Col>
         </Row>
