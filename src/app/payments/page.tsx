@@ -10,7 +10,8 @@ function PaymentResultPage({ searchParams }: any) {
   const { status } = searchParams;
   // console.log(searchParams);
   const resultTitle =
-    status === "success" ? "Successfully Paid" : "Something Went Wrong...";
+    status.includes("success") ? "Successfully Paid" : "Something Went Wrong...";
+
   return (
     <>
       <Result

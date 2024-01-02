@@ -4,7 +4,7 @@ import { tagTypes } from "../tag-types";
 
 export const BASE_STUDENT_SEMESTER_PAYMENT = "/student-semester-payments";
 
-const paymentApi = baseApi.injectEndpoints({
+const paymentApi = baseApi.injectEndpoints?.({
   endpoints: (build) => ({
     myPayments: build.query({
       query: (arg: Record<string, any>) => {

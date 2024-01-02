@@ -1,4 +1,4 @@
-import { DatePicker, DatePickerProps, Input } from "antd";
+import { DatePicker, DatePickerProps } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
 import dayjs, { Dayjs } from "dayjs";
 
@@ -31,14 +31,18 @@ const FormDatePicker = ({
       <Controller
         name={name}
         control={control}
-        render={({ field }) => (
-          <DatePicker
-            defaultValue={dayjs(field.value) || Date.now()}
-            size={size}
-            onChange={handleOnChange}
-            style={{ width: "100%" }}
-          />
-        )}
+        render={({ field }) => {
+          return (
+            (
+              <DatePicker
+                defaultValue={dayjs(field.value) || Date.now()}
+                size={size}
+                onChange={handleOnChange}
+                style={{ width: "100%" }}
+              />
+            )
+          )
+        }}
       />
     </div>
   );

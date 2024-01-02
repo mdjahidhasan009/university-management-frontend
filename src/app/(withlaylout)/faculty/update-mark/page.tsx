@@ -56,7 +56,9 @@ const UpdateMarksPage = ({ searchParams }: ISearchParams) => {
           },
         ]}
       />
+
       <ActionBar title="Update mark"></ActionBar>
+
       <Form defaultValues={defaultValues} submitHandler={onSubmit}>
         <p>Exam type: {examType}</p>
         <Row>

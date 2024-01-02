@@ -186,7 +186,9 @@ const ViewPreregistrationPage = () => {
   return (
     <>
       <UMBreadCrumb items={[{ label: `${base}`, link: `/${base}` }]} />
+
       <ActionBar title="Course Pre-registration" />
+
       <UMCollapse
         items={availableCourses}
         defaultActiveKey={availableCourses?.map((item) => item.key)}
